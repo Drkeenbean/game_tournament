@@ -131,6 +131,7 @@ if __name__ == '__main__':
     testCount()
     testRegister()
     testRegisterCountDelete()
+    reportMatch(1,2)
     #testStandingsBeforeMatches()
     #testReportMatches()
     #testPairings()

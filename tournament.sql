@@ -14,5 +14,15 @@ CREATE TABLE IF NOT EXISTS players (
 CREATE TABLE IF NOT EXISTS matches (
     id SERIAL PRIMARY KEY,
     winner_id INT NOT NULL REFERENCES players(id),
-    loswer_id INT NOT NULL REFERENCES players(id)
+    loser_id INT NOT NULL REFERENCES players(id)
+);
+
+CREATE VIEW standings AS (
+    SELECT players.id,
+    players.name,
+    COUNT(players.name) AS wins
+    FROM players, matches
+    WHERE players.id = matches.winner_id
+    GROUP BY players.id
+    ORDER BY wins DESC
 );
