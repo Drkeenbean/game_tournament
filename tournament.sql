@@ -6,17 +6,27 @@
 -- You can write comments in this file by starting them with two dashes, like
 -- these lines here.
 
+-- Table schema
+-- ----------------
+
+-- Stores player's names an assigns a unique id
 CREATE TABLE IF NOT EXISTS players (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL
 );
 
+-- Stores matches with unique id and winner and loser's player ids
 CREATE TABLE IF NOT EXISTS matches (
     id SERIAL PRIMARY KEY,
     winner_id INT NOT NULL REFERENCES players(id),
     loser_id INT NOT NULL REFERENCES players(id)
 );
 
+-- View schema
+-- ----------------
+
+-- Returns player's current standings, order by number of wins
+-- Formatted for playerStandings() function in tournamnent.py
 CREATE VIEW standings AS (
     SELECT players.id,
     players.name,
@@ -36,6 +46,8 @@ CREATE VIEW standings AS (
     ORDER BY wins DESC
 );
 
+-- Pairs players together based on number of wins
+-- Return formatted for swissPairings() function in tournament.py
 CREATE VIEW pairings AS (
     SELECT p1.id AS id1,
     p1.name AS name1,
