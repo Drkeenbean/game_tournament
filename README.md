@@ -44,4 +44,4 @@ Running the application
 
 Download
 -------
-- [Version 1.5](https://github.com/Drkeenbean/game_tournament/master.zip)
+- [Version 1.0](https://github.com/Drkeenbean/game_tournament/master.zip)
