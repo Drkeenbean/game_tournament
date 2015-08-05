@@ -84,8 +84,11 @@ def playerStandings():
     """
     database = connect()
     c = database.cursor()
-    c.execute()
-    database.close()
+    c.execute("SELECT * FROM standings")
+    standings = c.fetchall()
+    commit_close(database)
+
+    return standings
 
 
 def reportMatch(winner, loser):
@@ -117,5 +120,10 @@ def swissPairings():
         id2: the second player's unique id
         name2: the second player's name
     """
+    database = connect()
+    c = database.cursor()
+    c.execute("SELECT * FROM pairings")
+    pairings = c.fetchall()
+    commit_close(database)
 
-
+    return pairings
