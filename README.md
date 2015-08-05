@@ -1,9 +1,7 @@
-game_tournament - v0.5 08-05-2015
+game_tournament - v1.0 08-05-2015
 ===================================
 
-This app generates a static web page that lists information
-about my favorite movies and launches the movie's trailer
-in a modal window upon clicking its poster
+A database to hold participants in a Swiss-style tournament, record and store their matches, and pair them into fair matches according to their win/loss standings.
 
 Pre-requisites
 --------------
@@ -16,9 +14,9 @@ Pre-requisites
 Getting Started
 ---------------
 
-1. Follow the [guide]() to get the udacity VM cloned to your computer
+1. Follow the [guide](https://www.udacity.com/wiki/ud088/vagrant) to get the udacity VM cloned to your computer
 
-2. Clone this repo into your vagrant directory
+2. Clone [this repo](https://github.com/Drkeenbean/game_tournament) into your vagrant directory
 
 3. Navigate to your vagrant folder from the terminal/command prompt and run `vagrant up` to boot your Vagrant VM.
 
@@ -46,4 +44,4 @@ Running the application
 
 Download
 -------
-- [Version 0.5](https://github.com/Drkeenbean/game_tournament/master.zip)
+- [Version 1.5](https://github.com/Drkeenbean/game_tournament/master.zip)
